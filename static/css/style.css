@@ -1,0 +1,315 @@
+    /* ===== Global Styles ===== */
+    :root {
+        --primary: #4361ee;
+        --danger: #ef233c;
+        --success: #2ec4b6;
+        --dark: #2b2d42;
+        --light: #f8f9fa;
+        --gray: #adb5bd;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-color: #f1f5fe;
+        color: var(--dark);
+        line-height: 1.6;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    /* ===== Header ===== */
+    header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .logo {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+        color: var(--dark);
+        opacity: 0.8;
+        font-size: 1.1rem;
+    }
+    
+    /* ===== Tab Navigation ===== */
+    .tabs {
+        display: flex;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .tab {
+        padding: 0.8rem 1.5rem;
+        cursor: pointer;
+        font-weight: 500;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .tab.active {
+        border-bottom: 3px solid var(--primary);
+        color: var(--primary);
+    }
+    
+    .tab-content {
+        display: none;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+    
+    /* ===== Main Content ===== */
+    .app-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .app-container {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    /* ===== Input Panel ===== */
+    .input-panel {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .panel-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+    }
+    
+    .email-input {
+        width: 100%;
+        min-height: 300px;
+        padding: 1rem;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
+        resize: vertical;
+        margin-bottom: 1.5rem;
+    }
+    
+    .email-input:focus {
+        outline: none;
+        border-color: var(--primary);
+    }
+    
+    .btn-group {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+    }
+    
+    .btn-primary {
+        background-color: var(--primary);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: #3a56d4;
+    }
+    
+    .btn-outline {
+        background: transparent;
+        border: 2px solid var(--gray);
+        color: var(--dark);
+    }
+    
+    .btn-outline:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+    
+    /* ===== Results Panel ===== */
+    .results-panel {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .result-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .verdict-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .safe {
+        background-color: rgba(46, 196, 182, 0.1);
+        color: var(--success);
+    }
+    
+    .phishing {
+        background-color: rgba(239, 35, 60, 0.1);
+        color: var(--danger);
+    }
+    
+    .verdict-text {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    
+    .confidence {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-top: 0.3rem;
+    }
+    
+    .features-list {
+        margin-top: 1.5rem;
+    }
+    
+    .feature-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .feature-name {
+        font-weight: 500;
+    }
+    
+    .feature-value {
+        font-weight: 600;
+    }
+    
+    .safe-text {
+        color: var(--success);
+    }
+    
+    .danger-text {
+        color: var(--danger);
+    }
+    
+    /* ===== History Panel ===== */
+    .history-panel {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .history-list {
+        margin-top: 1.5rem;
+    }
+    
+    .history-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    
+    .history-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .history-item.phishing {
+        border-left: 4px solid var(--danger);
+    }
+    
+    .history-item.safe {
+        border-left: 4px solid var(--success);
+    }
+    
+    .history-content {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-right: 1rem;
+    }
+    
+    .history-date {
+        color: var(--gray);
+        font-size: 0.9rem;
+        min-width: 120px;
+        text-align: right;
+    }
+    
+    .clear-history {
+        margin-top: 1.5rem;
+        text-align: right;
+    }
+    
+    /* ===== Loading State ===== */
+    .loading {
+        display: none;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #e9ecef;
+        border-top-color: var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 1rem;
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    /* ===== Empty State ===== */
+    .empty-state {
+        text-align: center;
+        padding: 3rem 0;
+        color: var(--gray);
+    }
+    
+    .empty-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        opacity: 0.5;
+    }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpamShield AI | Email Protection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">SpamShield AI</div>
+            <div class="tagline">Advanced phishing detection powered by AI</div>
+        </header>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="detector">Email Detector</div>
+            <div class="tab" data-tab="history">Detection History</div>
+        </div>
+        
+        <div class="tab-content active" id="detector">
+            <main class="app-container">
+                <section class="input-panel">
+                    <h2 class="panel-title">Analyze Email</h2>
+                    <textarea class="email-input" id="emailInput" placeholder="Paste email content here..."></textarea>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="analyzeBtn">Analyze</button>
+                        <button class="btn btn-outline" id="clearBtn">Clear</button>
+                    </div>
+                </section>
+                
+                <section class="results-panel">
+                    <h2 class="panel-title">Detection Results</h2>
+                    
+                    <div class="loading" id="loadingIndicator">
+                        <div class="spinner"></div>
+                        <p>Analyzing email content...</p>
+                    </div>
+                    
+                    <div id="resultsContent">
+                        <div class="empty-state">
+                            <div class="empty-icon">📧</div>
+                            <h3>No email analyzed yet</h3>
+                            <p>Paste an email in the input field and click "Analyze" to check for phishing attempts</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+        <div class="tab-content" id="history">
+            <section class="history-panel">
+                <h2 class="panel-title">Detection History</h2>
+                
+                <div id="historyList" class="history-list">
+                    <!-- History items will be loaded here -->
+                </div>
+                
+                <div class="empty-state" id="emptyHistory">
+                    <div class="empty-icon">🕒</div>
+                    <h3>No history yet</h3>
+                    <p>Analyzed emails will appear here</p>
+                </div>
+                
+                <div class="clear-history">
+                    <button class="btn btn-outline" id="clearHistoryBtn">Clear All History</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
